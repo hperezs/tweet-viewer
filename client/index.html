@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tweet Viewer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/tweet.css">
+    <script src="https://kit.fontawesome.com/c939d0e917.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="home-page">
+        <section class="navigation-bar">
+
+            <div class="logo">
+                <i class="fab fa-twitter"></i>
+            </div>
+
+            <div class="home-link">
+                <i class="fas fa-home"></i>
+            </div>
+
+            <div class="profile-container">
+                <div class="profile"></div>
+            </div>
+
+        </section>
+
+        <main class="mid-container">
+            <section class="search-bar-container">
+                <input id="search-input" type="text" placeholder="Search Twitter" onkeyup="checkForEnter(event);">
+                <i class="fas fa-search fa-flip-horizontal" onclick="getTwitterData();"></i>
+            </section>
+
+            <section id="tweet-list" class="tweets-container">
+                <div class="tweet-container">
+
+                </div>
+            </section>
+
+            <div class="next-page-btn-container" onclick="getNextPage()">
+                <i class="fas fa-arrow-down"></i>
+            </div>
+        </main>
+
+        <section class="sidebar-container">
+            <div class="trendings-container">
+                <div class="trendings">
+                    <h4 class="trendings-title">Trends for you</h4>
+                    <ul>
+                        <li class="trendings-item" onclick="selectTrend(event)">#coding</li>
+                        <li class="trendings-item" onclick="selectTrend(event)">#javascript</li>
+                        <li class="trendings-item" onclick="selectTrend(event)">#python</li>
+                        <li class="trendings-item" onclick="selectTrend(event)">#webapps</li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="theme-select-container">
+                <h3 id="theme-select-label">Dark Mode</h3>
+                <label class="switch">
+                    <input type="checkbox" id="theme-selector" onclick="setTheme(event)">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </section>
+    </div>
+    <script src="js/index.js" async defer></script>
+</body>
